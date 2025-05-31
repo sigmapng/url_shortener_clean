@@ -1,0 +1,151 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IDE - Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# IDE - Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# Operating System Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# Application Server Files
+# WildFly/JBoss
+standalone/log/
+standalone/tmp/
+standalone/data/
+standalone/deployments/*.deployed
+standalone/deployments/*.failed
+standalone/deployments/*.isdeploying
+standalone/deployments/*.pending
+standalone/deployments/*.undeployed
+
+# Tomcat
+logs/
+work/
+temp/
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration Files (may contain sensitive data)
+# Uncomment these if they contain passwords or secrets
+# application.properties
+# application-*.properties
+# application.yml
+# application-*.yml
+
+# Temporary Files
+*.tmp
+*.temp
+*.cache
+
+# Generated Documentation
+/doc/
+
+# Test Coverage Reports
+jacoco.exec
+*.exec
+
+# Node.js (if using frontend build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend Build Artifacts
+/src/main/webapp/dist/
+/src/main/webapp/build/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# SQL Scripts with sensitive data
+# Uncomment if these contain real passwords
+# setup_user.sql
+
+# Project Specific
+# Documentation might contain sensitive setup info
+# WILDFLY_SETUP*.md
