@@ -1,7 +1,13 @@
 package com.urlshortener.model;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "url_mappings")
@@ -16,8 +22,7 @@ public class UrlMapping {
 
   @Column(nullable = false, unique = true, length = 10)
   private String shortCode;
-
-  @Column(nullable = false)
+  @Column(name = "createdat", nullable = false)
   private LocalDateTime createdAt;
 
   @Column(nullable = false)

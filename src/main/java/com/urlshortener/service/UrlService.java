@@ -1,12 +1,13 @@
 package com.urlshortener.service;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import com.urlshortener.model.UrlMapping;
 import com.urlshortener.util.ShortCodeGenerator;
-import jakarta.ejb.Stateless;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.NoResultException;
-import jakarta.persistence.TypedQuery;
 
 @Stateless
 public class UrlService {
