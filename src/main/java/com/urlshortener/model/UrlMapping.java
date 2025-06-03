@@ -38,7 +38,6 @@ public class UrlMapping {
     this.shortCode = shortCode;
   }
 
-  // Getters and Setters
   public Long getId() {
     return id;
   }

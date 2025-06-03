@@ -28,7 +28,7 @@ public class RedirectServlet extends HttpServlet {
       return;
     }
 
-    String shortCode = pathInfo.substring(1); // Remove leading slash
+    String shortCode = pathInfo.substring(1);
 
     UrlMapping urlMapping = urlService.findByShortCode(shortCode);
     if (urlMapping == null) {
@@ -36,10 +36,8 @@ public class RedirectServlet extends HttpServlet {
       return;
     }
 
-    // Increment click count
     urlService.incrementClickCount(shortCode);
 
-    // Redirect to original URL
     response.sendRedirect(urlMapping.getOriginalUrl());
   }
 }

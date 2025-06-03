@@ -21,7 +21,6 @@
               </div>
               <div class="card-body p-4">
 
-                <!-- Success Message -->
                 <c:if test="${success}">
                   <div class="alert alert-success" role="alert">
                     <h6 class="mb-2">URL shortened successfully!</h6>
@@ -35,14 +34,12 @@
                   </div>
                 </c:if>
 
-                <!-- Error Message -->
                 <c:if test="${not empty error}">
                   <div class="alert alert-danger" role="alert">
                     <strong>Error:</strong> ${error}
                   </div>
                 </c:if>
 
-                <!-- URL Shortening Form -->
                 <form action="shorten" method="post" class="mb-4">
                   <div class="mb-3">
                     <label for="url" class="form-label">Enter URL to shorten</label>
@@ -57,7 +54,6 @@
                   </button>
                 </form>
 
-                <!-- Features Section -->
                 <div class="row">
                   <div class="col-md-4">
                     <div class="feature-box">

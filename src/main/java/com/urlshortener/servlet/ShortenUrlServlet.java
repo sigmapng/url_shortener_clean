@@ -23,11 +23,9 @@ public class ShortenUrlServlet extends HttpServlet {
       throws ServletException, IOException {
 
     String originalUrl = request.getParameter("url");
-
     try {
       UrlMapping urlMapping = urlService.createShortUrl(originalUrl);
 
-      // Build short URL
       String baseUrl = request.getScheme() + "://" + request.getServerName() +
           ":" + request.getServerPort() + request.getContextPath();
       String shortUrl = baseUrl + "/r/" + urlMapping.getShortCode();

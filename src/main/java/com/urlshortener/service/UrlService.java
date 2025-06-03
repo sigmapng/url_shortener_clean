@@ -16,29 +16,24 @@ public class UrlService {
   private EntityManager em;
 
   public UrlMapping createShortUrl(String originalUrl) {
-    // Validate URL
     if (originalUrl == null || originalUrl.trim().isEmpty()) {
       throw new IllegalArgumentException("URL cannot be empty");
     }
 
-    // Add protocol if missing
     if (!originalUrl.startsWith("http://") && !originalUrl.startsWith("https://")) {
       originalUrl = "https://" + originalUrl;
     }
 
-    // Check if URL already exists
     UrlMapping existing = findByOriginalUrl(originalUrl);
     if (existing != null) {
       return existing;
     }
 
-    // Generate unique short code
     String shortCode;
     do {
       shortCode = ShortCodeGenerator.generateShortCode();
     } while (findByShortCode(shortCode) != null);
 
-    // Create and persist new mapping
     UrlMapping urlMapping = new UrlMapping(originalUrl, shortCode);
     em.persist(urlMapping);
     return urlMapping;
