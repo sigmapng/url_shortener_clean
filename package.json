@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend build tools for URL Shortener",
   "scripts": {
-    "sass": "sass src/main/webapp/scss/style.scss src/main/webapp/css/style.css --style=expanded --source-map"
+    "sass": "sass src/main/webapp/styles/style.scss src/main/webapp/styles/style.css --style=expanded --source-map",
+    "sass:watch": "sass --watch src/main/webapp/styles/style.scss src/main/webapp/styles/style.css --style=expanded --source-map"
   },
   "devDependencies": {
     "sass": "^1.89.1"

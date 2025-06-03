@@ -16,9 +16,9 @@ A modern Java web application for shortening URLs built with Jakarta EE and Post
 - **Frontend**: JSP, SCSS, CSS3, JavaScript
 - **Database**: PostgreSQL 42.6.0
 - **ORM**: Hibernate 5.6.15
-- **Application Server**: WildFly 31.0.1
+- **Application Server**: WildFly 26.1.3
 - **Build Tool**: Maven 3.11.0
-- **CSS Preprocessor**: Sass (via Node.js 18.17.0)
+- **CSS Preprocessor**: Sass (via Node.js)
 
 ## Project Structure
 
@@ -33,9 +33,9 @@ src/
 │   ├── resources/
 │   │   └── META-INF/       # JPA configuration (persistence.xml)
 │   └── webapp/
-│       ├── css/            # Compiled stylesheets
-│       ├── scss/           # SCSS source files
+│       ├── styles/         # SCSS source files and compiled CSS
 │       │   ├── style.scss  # Main stylesheet
+│       │   ├── style.css   # Compiled CSS
 │       │   ├── _variables.scss
 │       │   └── _mixins.scss
 │       ├── index.jsp       # Main application page
@@ -52,16 +52,16 @@ src/
 
    - Java 17 or higher
    - PostgreSQL database server
-   - WildFly 31.0.1 Final application server
-   - Maven 3.6+ (optional, for building)
-   - Node.js 18.17.0+ (for SCSS compilation)
+   - WildFly 26.1.3 Final application server
+   - Maven 3.6+ (for building)
+   - Node.js (for SCSS compilation)
 
 2. **Database Setup**:
 
    ```sql
-   CREATE DATABASE url_shortener;
+   CREATE DATABASE url_mappings;
    CREATE USER url_app WITH PASSWORD 'urlpass123';
-   GRANT ALL PRIVILEGES ON DATABASE url_shortener TO url_app;
+   GRANT ALL PRIVILEGES ON DATABASE url_mappings TO url_app;
    ```
 
 3. **Configure WildFly DataSource**:
@@ -73,11 +73,17 @@ src/
 4. **Build and Deploy**:
 
    ```bash
-   # Compile SCSS and build WAR file
+   # Install Node.js dependencies for SCSS compilation
+   npm install
+
+   # Compile SCSS to CSS (if changes were made)
+   npm run sass
+
+   # Build WAR file
    mvn clean package
 
    # Deploy to WildFly
-   # Copy target/url-shortener.war to wildfly/standalone/deployments/
+   # Copy target/url-shortener.war to WildFly deployments directory
    ```
 
 5. **Access**:
@@ -168,6 +174,16 @@ wildfly/standalone/deployments/
     │   │   └── META-INF/persistence.xml   # JPA configuration
     │   ├── web.xml                        # Web configuration
     │   └── beans.xml                      # CDI configuration
-    ├── css/style.css                      # Compiled CSS
+    ├── styles/style.css                   # Compiled CSS
     └── index.jsp                          # Main page
 ```
+
+## Project Features
+
+- ✅ **Clean Architecture**: Organized packages with clear separation of concerns
+- ✅ **Modern CSS**: SCSS with variables, mixins, and responsive design
+- ✅ **Centered UI**: Flexbox-based layout with perfect vertical/horizontal centering
+- ✅ **Database Integration**: PostgreSQL with Hibernate ORM
+- ✅ **JEE Standards**: Uses Jakarta EE specifications
+- ✅ **Build Automation**: Maven with integrated SCSS compilation
+- ✅ **Production Ready**: Optimized for WildFly deployment

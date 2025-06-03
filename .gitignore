@@ -113,6 +113,9 @@ temp/
 # application.yml
 # application-*.yml
 
+# Shell scripts (may contain sensitive configuration)
+configure-postgresql.sh
+
 # Temporary Files
 *.tmp
 *.temp
@@ -125,11 +128,17 @@ temp/
 jacoco.exec
 *.exec
 
-# Node.js (if using frontend build tools)
+# Node.js (frontend build tools)
 node_modules/
+node/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+
+# SCSS compilation artifacts
+/src/main/webapp/styles/*.css
+/src/main/webapp/styles/*.css.map
 
 # Frontend Build Artifacts
 /src/main/webapp/dist/
@@ -141,11 +150,3 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
-# SQL Scripts with sensitive data
-# Uncomment if these contain real passwords
-# setup_user.sql
-
-# Project Specific
-# Documentation might contain sensitive setup info
-# WILDFLY_SETUP*.md

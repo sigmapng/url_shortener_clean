@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
              http://java.sun.com/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
-    <persistence-unit name="urlShortenerPU">
+    <persistence-unit name="url-shortener-pu">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:jboss/datasources/UrlShortenerDS</jta-data-source>
         
