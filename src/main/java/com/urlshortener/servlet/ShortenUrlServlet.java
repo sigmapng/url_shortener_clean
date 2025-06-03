@@ -2,7 +2,7 @@ package com.urlshortener.servlet;
 
 import java.io.IOException;
 
-import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ import com.urlshortener.service.UrlService;
 @WebServlet("/shorten")
 public class ShortenUrlServlet extends HttpServlet {
 
-  @EJB
+  @Inject
   private UrlService urlService;
 
   @Override
